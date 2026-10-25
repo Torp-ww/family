@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Семейный помощник</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F3F6F7}
+a{color:#0A524E}
+a:hover{color:#14232B}
+a:focus-visible{outline:3px solid #14232B;outline-offset:3px}
+.btn-main:hover{background:#0A524E !important;color:#fff !important}
+.btn-alt:hover{background:#DCEFED !important;color:#14232B !important}
+.nav-link:hover{color:#0E6B66 !important}
+</style>
+</helmet>
+
+<div style="background:#F3F6F7; color:#14232B; font-family:'Nunito',system-ui,sans-serif; font-size:18px; line-height:1.5">
+
+  <!-- ===== ШАПКА ===== -->
+  <header style="max-width:1120px; margin:0 auto; padding:20px 24px; box-sizing:border-box; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px">
+    <a href="#top" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#14232B" aria-label="Семейный помощник, в начало страницы">
+      <svg viewBox="0 0 1024 1024" width="44" height="44" role="img" aria-label="Иконка приложения">
+        <rect width="1024" height="1024" rx="230" fill="#0E6B66"></rect>
+        <path d="M512 190 L860 478 Q880 496 862 514 L820 548 L204 548 L162 514 Q144 496 164 478 Z" fill="#DCEFED" stroke="#DCEFED" stroke-width="40" stroke-linejoin="round"></path>
+        <rect x="270" y="470" width="484" height="360" rx="44" fill="#FFFFFF"></rect>
+        <g transform="translate(512 640) scale(1.5)"><path d="M0 60 C-92 -2 -74 -72 -32 -72 C-13 -72 0 -59 0 -44 C0 -59 13 -72 32 -72 C74 -72 92 -2 0 60 Z" fill="#0E6B66"></path></g>
+      </svg>
+      <span style="font-size:22px; font-weight:800">Семейный помощник</span>
+    </a>
+    <nav aria-label="Разделы сайта" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 24px">
+      <a class="nav-link" href="#features" style="color:#14232B; font-weight:700; text-decoration:none; min-height:44px; display:flex; align-items:center">Возможности</a>
+      <a class="nav-link" href="#ages" style="color:#14232B; font-weight:700; text-decoration:none; min-height:44px; display:flex; align-items:center">Для всех возрастов</a>
+      <a class="nav-link" href="#install" style="color:#14232B; font-weight:700; text-decoration:none; min-height:44px; display:flex; align-items:center">Как установить</a>
+    </nav>
+  </header>
+
+  <!-- ===== ГЛАВНЫЙ ЭКРАН ===== -->
+  <section id="top" style="max-width:1120px; margin:0 auto; padding:40px 24px 72px; box-sizing:border-box; display:flex; flex-wrap:wrap; align-items:center; gap:48px">
+    <div style="flex:1 1 440px; min-width:0; display:flex; flex-direction:column; gap:24px">
+      <h1 style="margin:0; font-size:56px; line-height:1.08; font-weight:800">Деньги, дела и планы семьи в одном приложении</h1>
+      <p style="margin:0; font-size:22px; font-weight:500; color:#46575F">Записывайте доходы и расходы, видите, кто где, и планируйте поездки и встречи вместе. Всё крупно и понятно: подходит и детям, и бабушкам.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px">
+        <a class="btn-main" href="https://github.com/Torp-ww/trekep/releases/latest" style="min-height:60px; padding:0 28px; box-sizing:border-box; border-radius:18px; background:#0E6B66; color:#fff; font-size:20px; font-weight:800; text-decoration:none; display:flex; align-items:center; gap:10px">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"></path></svg>
+          Скачать для Android
+        </a>
+        <a class="btn-alt" href="#install" style="min-height:60px; padding:0 28px; box-sizing:border-box; border-radius:18px; background:#fff; color:#14232B; border:2px solid #8FA3AB; font-size:20px; font-weight:800; text-decoration:none; display:flex; align-items:center">Как установить</a>
+      </div>
+      <p style="margin:0; font-size:16px; font-weight:700; color:#46575F">Версия для iPhone пока не готова.</p>
+    </div>
+
+    <!-- макет экрана приложения -->
+    <div style="flex:1 1 320px; display:flex; justify-content:center">
+      <div style="width:300px; box-sizing:border-box; border:10px solid #14232B; border-radius:44px; background:#F3F6F7; padding:20px 16px 18px; display:flex; flex-direction:column; gap:12px; box-shadow:0 24px 48px rgba(20,35,43,0.18)" role="img" aria-label="Пример экрана «Финансы»: сумма на руках, доходы, расходы и статусы семьи">
+        <div style="font-size:24px; font-weight:800">Финансы</div>
+        <div style="background:#0E6B66; color:#fff; border-radius:20px; padding:16px">
+          <div style="font-size:14px; font-weight:700">Сейчас на руках</div>
+          <div style="font-size:32px; font-weight:800; line-height:1.15">84 500 ₽</div>
+        </div>
+        <div style="display:flex; gap:10px">
+          <div style="flex:1; background:#E2EDF8; color:#0B5EA8; border-radius:16px; padding:12px; box-sizing:border-box">
+            <div style="font-size:14px; font-weight:800">Доходы</div>
+            <div style="font-size:18px; font-weight:800">+67 000 ₽</div>
+          </div>
+          <div style="flex:1; background:#FBE9DD; color:#A83F0A; border-radius:16px; padding:12px; box-sizing:border-box">
+            <div style="font-size:14px; font-weight:800">Расходы</div>
+            <div style="font-size:18px; font-weight:800">−23 800 ₽</div>
+          </div>
+        </div>
+        <div style="background:#fff; border:1px solid #D3DCE0; border-radius:18px; padding:12px; display:flex; flex-direction:column; gap:8px">
+          <div style="font-size:15px; font-weight:800">Где сейчас все</div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px"><span style="font-size:15px; font-weight:800">Мама</span><span style="background:#E3EAF8; color:#1F3F8A; border-radius:12px; padding:4px 10px; font-size:13px; font-weight:800">На работе</span></div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px"><span style="font-size:15px; font-weight:800">Папа</span><span style="background:#FDEBD3; color:#7F4500; border-radius:12px; padding:4px 10px; font-size:13px; font-weight:800">В дороге</span></div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px"><span style="font-size:15px; font-weight:800">Бабушка</span><span style="background:#E0F2EA; color:#0B5A3D; border-radius:12px; padding:4px 10px; font-size:13px; font-weight:800">Дома</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ВОЗМОЖНОСТИ ===== -->
+  <section id="features" style="background:#fff; border-top:1px solid #D3DCE0; border-bottom:1px solid #D3DCE0">
+    <div style="max-width:1120px; margin:0 auto; padding:72px 24px; box-sizing:border-box; display:flex; flex-direction:column; gap:40px">
+      <h2 style="margin:0; font-size:40px; line-height:1.15; font-weight:800">Что умеет приложение</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:20px">
+
+        <div style="flex:1 1 240px; background:#F3F6F7; border-radius:24px; padding:24px; box-sizing:border-box; display:flex; flex-direction:column; gap:12px">
+          <div style="width:52px; height:52px; border-radius:16px; background:#DCEFED; color:#0A524E; display:flex; align-items:center; justify-content:center">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zM3 8l2-3h13M16 14h3"></path></svg>
+          </div>
+          <h3 style="margin:0; font-size:24px; font-weight:800">Финансы</h3>
+          <p style="margin:0; color:#46575F; font-weight:500">Введите сумму на руках, записывайте доходы и расходы одним нажатием. Напоминания подскажут, что нужно оплатить в этом месяце.</p>
+        </div>
+
+        <div style="flex:1 1 240px; background:#F3F6F7; border-radius:24px; padding:24px; box-sizing:border-box; display:flex; flex-direction:column; gap:12px">
+          <div style="width:52px; height:52px; border-radius:16px; background:#E2EDF8; color:#0B5EA8; display:flex; align-items:center; justify-content:center">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-3-2-3 2-3-2-3 2V4a1 1 0 0 1 1-1zM9 8h6M9 12h6"></path></svg>
+          </div>
+          <h3 style="margin:0; font-size:24px; font-weight:800">История</h3>
+          <p style="margin:0; color:#46575F; font-weight:500">Все записи по месяцам и дням в отдельной вкладке. Вводить и смотреть не мешают друг другу. Лишнюю запись можно смахнуть, а случайное удаление отменить.</p>
+        </div>
+
+        <div style="flex:1 1 240px; background:#F3F6F7; border-radius:24px; padding:24px; box-sizing:border-box; display:flex; flex-direction:column; gap:12px">
+          <div style="width:52px; height:52px; border-radius:16px; background:#FDEBD3; color:#7F4500; display:flex; align-items:center; justify-content:center">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.74"></path></svg>
+          </div>
+          <h3 style="margin:0; font-size:24px; font-weight:800">Семейный хаб</h3>
+          <p style="margin:0; color:#46575F; font-weight:500">Статусы «в дороге», «занят», «дома» видят все родные. Статус можно сказать голосом или включать по расписанию в нужные дни и часы.</p>
+        </div>
+
+        <div style="flex:1 1 240px; background:#F3F6F7; border-radius:24px; padding:24px; box-sizing:border-box; display:flex; flex-direction:column; gap:12px">
+          <div style="width:52px; height:52px; border-radius:16px; background:#F6E4F0; color:#7A1F63; display:flex; align-items:center; justify-content:center">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zM16 2v4M8 2v4M4 10h16"></path></svg>
+          </div>
+          <h3 style="margin:0; font-size:24px; font-weight:800">Общий календарь</h3>
+          <p style="margin:0; color:#46575F; font-weight:500">Когда идём в гости, когда едем отдыхать и когда возвращаемся домой. План один на всю семью, у каждого события видно, кто его добавил.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ДЛЯ ВСЕХ ВОЗРАСТОВ ===== -->
+  <section id="ages" style="max-width:1120px; margin:0 auto; padding:72px 24px; box-sizing:border-box; display:flex; flex-wrap:wrap; gap:48px; align-items:center">
+    <div style="flex:1 1 420px; min-width:0; display:flex; flex-direction:column; gap:20px">
+      <h2 style="margin:0; font-size:40px; line-height:1.15; font-weight:800">Понятно и детям, и бабушкам</h2>
+      <p style="margin:0; font-size:20px; color:#46575F; font-weight:500">Интерфейс сделан так, чтобы им мог пользоваться любой член семьи без объяснений.</p>
+    </div>
+    <ul style="flex:1 1 420px; min-width:0; margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:14px">
+      <li style="display:flex; gap:14px; align-items:flex-start"><span style="flex:none; width:36px; height:36px; border-radius:50%; background:#0E6B66; color:#fff; display:flex; align-items:center; justify-content:center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"></path></svg></span><span style="font-size:20px; font-weight:700; padding-top:3px">Крупный шрифт и большие кнопки</span></li>
+      <li style="display:flex; gap:14px; align-items:flex-start"><span style="flex:none; width:36px; height:36px; border-radius:50%; background:#0E6B66; color:#fff; display:flex; align-items:center; justify-content:center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"></path></svg></span><span style="font-size:20px; font-weight:700; padding-top:3px">У каждой иконки есть подпись словами</span></li>
+      <li style="display:flex; gap:14px; align-items:flex-start"><span style="flex:none; width:36px; height:36px; border-radius:50%; background:#0E6B66; color:#fff; display:flex; align-items:center; justify-content:center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"></path></svg></span><span style="font-size:20px; font-weight:700; padding-top:3px">Статус можно сказать голосом, печатать не нужно</span></li>
+      <li style="display:flex; gap:14px; align-items:flex-start"><span style="flex:none; width:36px; height:36px; border-radius:50%; background:#0E6B66; color:#fff; display:flex; align-items:center; justify-content:center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"></path></svg></span><span style="font-size:20px; font-weight:700; padding-top:3px">Доходы синего цвета, расходы оранжевого, и ещё со знаками «+» и «−»</span></li>
+      <li style="display:flex; gap:14px; align-items:flex-start"><span style="flex:none; width:36px; height:36px; border-radius:50%; background:#0E6B66; color:#fff; display:flex; align-items:center; justify-content:center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"></path></svg></span><span style="font-size:20px; font-weight:700; padding-top:3px">Приложение следует настройке крупного шрифта в телефоне</span></li>
+    </ul>
+  </section>
+
+  <!-- ===== КАК УСТАНОВИТЬ ===== -->
+  <section id="install" style="background:#0E6B66; color:#fff">
+    <div style="max-width:1120px; margin:0 auto; padding:72px 24px; box-sizing:border-box; display:flex; flex-direction:column; gap:36px">
+      <h2 style="margin:0; font-size:40px; line-height:1.15; font-weight:800">Как установить на Android</h2>
+      <ol style="margin:0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:20px">
+        <li style="flex:1 1 260px; background:rgba(255,255,255,0.12); border-radius:24px; padding:24px; box-sizing:border-box; display:flex; flex-direction:column; gap:10px">
+          <span style="width:44px; height:44px; border-radius:50%; background:#fff; color:#0A524E; font-weight:800; font-size:22px; display:flex; align-items:center; justify-content:center">1</span>
+          <span style="font-size:22px; font-weight:800">Скачайте файл</span>
+          <span style="font-weight:500">Нажмите «Скачать для Android» на телефоне. Загрузится файл с названием semeiny-pomoshnik.apk.</span>
+        </li>
+        <li style="flex:1 1 260px; background:rgba(255,255,255,0.12); border-radius:24px; padding:24px; box-sizing:border-box; display:flex; flex-direction:column; gap:10px">
+          <span style="width:44px; height:44px; border-radius:50%; background:#fff; color:#0A524E; font-weight:800; font-size:22px; display:flex; align-items:center; justify-content:center">2</span>
+          <span style="font-size:22px; font-weight:800">Откройте его</span>
+          <span style="font-weight:500">Телефон спросит разрешение на установку из браузера. Разрешите: приложение устанавливается не из магазина.</span>
+        </li>
+        <li style="flex:1 1 260px; background:rgba(255,255,255,0.12); border-radius:24px; padding:24px; box-sizing:border-box; display:flex; flex-direction:column; gap:10px">
+          <span style="width:44px; height:44px; border-radius:50%; background:#fff; color:#0A524E; font-weight:800; font-size:22px; display:flex; align-items:center; justify-content:center">3</span>
+          <span style="font-size:22px; font-weight:800">Соберите семью</span>
+          <span style="font-weight:500">Откройте вкладку «Семья». Один человек нажимает «Создать семью» и передаёт код, остальные вводят его у себя.</span>
+        </li>
+      </ol>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center">
+        <a href="https://github.com/Torp-ww/trekep/releases/latest" style="min-height:60px; padding:0 28px; box-sizing:border-box; border-radius:18px; background:#fff; color:#0A524E; font-size:20px; font-weight:800; text-decoration:none; display:flex; align-items:center; gap:10px">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"></path></svg>
+          Скачать для Android
+        </a>
+        <span style="font-weight:700">Версия для iPhone пока не готова.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ПОДВАЛ ===== -->
+  <footer style="max-width:1120px; margin:0 auto; padding:36px 24px 48px; box-sizing:border-box; display:flex; flex-direction:column; gap:8px">
+    <div style="font-size:20px; font-weight:800">Семейный помощник</div>
+    <p style="margin:0; color:#46575F; font-weight:500; max-width:640px">Деньги, история, напоминания и календарь хранятся на вашем телефоне. На общий сервер для семьи уходят только имя, статус и события календаря.</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
